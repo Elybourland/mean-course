@@ -6,3 +6,7 @@
 mat-expansion-panel-header {
   font-weight: bold;
 }
+
+.info-text {
+  text-align: center;
+}
