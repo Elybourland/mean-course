@@ -2,17 +2,25 @@ const express = require('express');
 
 const app = express();
 
-app.use((req, res, next) => {
-  // if (req.url === '/favicon.ico') {
-  //   return;
-  // }
-  console.log('First middleware');
-  console.log(req.url);
-  next();
+app.use('/api/posts', (req, res, next) => {
+  const posts = [
+    {
+      id: 'abc121212',
+      title: 'First server-side post',
+      content: 'This is coming from server!'
+    },
+    {
+      id: 'def131313',
+      title: 'Second server-side post',
+      content: 'This is coming from server again!'
+    }
+  ];
+  res.status(200).json({
+    message: 'Posts fetched successfully!',
+    posts: posts
+  });
 });
 
-app.use((req, res, next) => {
-  res.send('Hello from express!');
-});
+
 
 module.exports = app;
