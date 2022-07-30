@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 const Post = require('./models/post');
+const { createShorthandPropertyAssignment } = require('typescript');
 
 const app = express();
 
@@ -36,9 +37,11 @@ app.post('/api/posts', (req, res, next) => {
     title: req.body.title,
     content: req.body.content
   });
-  post.save();
-  res.status(201).json({
-    message: 'Post added successfully'
+  post.save().then(createdPost => {
+    res.status(201).json({
+    message: 'Post added successfully',
+    postId: createdPost._id
+    });
   });
 });
 
