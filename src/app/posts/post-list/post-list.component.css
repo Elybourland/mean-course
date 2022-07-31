@@ -10,3 +10,7 @@ mat-expansion-panel-header {
 .info-text {
   text-align: center;
 }
+
+mat-spinner {
+  margin: auto;
+}
