@@ -2,12 +2,17 @@ ul {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
 }
 
 a {
   text-decoration: none;
   color: #fff;
 }
+
+/* ul {
+  display: flex;
+} */
 
 .spacer {
   flex: 1 1 auto;
