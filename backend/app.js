@@ -10,7 +10,7 @@ const app = express();
 
 mongoose
   .connect(
-    "mongodb+srv://elybourland:rAB4w95AuLOn7oK8@cluster0.mgssfjc.mongodb.net/node-angular?retryWrites=true&w=majority"
+    "mongodb+srv://elybourland:" + process.env.MONGO_ATLAS_PW + "@cluster0.mgssfjc.mongodb.net/node-angular?retryWrites=true&w=majority"
     // may need to remove ?retryWrites=true&w=majority - it's not required
   )
   .then(() => {
